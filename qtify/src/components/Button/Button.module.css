@@ -1,9 +1,14 @@
 .button {
+    font-family: Poppins;
     padding: 10px 16px ;
     border-radius: 12px ;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 .button:active{
