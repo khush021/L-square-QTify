@@ -6,7 +6,7 @@ export const SearchBar = ({ onSearch, searchText="" }) => {
     <div className={s.root}>
       <input
         placeholder="Search an album of your choice"
-        value={searchText}
+        // value={searchText}
         onChange={onSearch}
       />
       <button >
