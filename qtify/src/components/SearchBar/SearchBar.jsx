@@ -3,16 +3,13 @@ import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
 
 export const SearchBar = ({ onSearch, searchText = "" }) => {
   return (
-    // <div className={s.root}>
       <input
         placeholder="Search an album of your choice"
         // value={searchText}
         onChange={onSearch}
         type="search"
+        className={s.search_input}
       />
-      /* <button>
-        <SearchIcon />
-      </button>
-    </div> */
+
   );
 };

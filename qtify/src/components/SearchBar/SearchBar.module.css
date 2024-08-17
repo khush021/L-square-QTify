@@ -1,15 +1,22 @@
-.root {
+.search_input {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 48px;
+  background-image: url('../../assets/search-icon.svg');
+  background-size: 50px 20px; 
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  outline: none; 
+  box-sizing: border-box; 
+  position: relative;
 }
+
 input {
   width: 500px;
   height: 100%;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 8px;
   border: 1px solid black;
-  border-right: none;
   padding: 0 16px;
 }
 
@@ -19,6 +26,19 @@ input::placeholder {
   line-height: 19.2px;
   letter-spacing: 0.2;
   text-align: left;
+}
+
+.search_input::placeholder::after{
+  content: ""; /* Unicode for the magnifying glass icon */
+  height: 40px;
+  width: 1px;
+  background-color: #000000;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
 }
 
 input:focus{
