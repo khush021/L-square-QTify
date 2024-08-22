@@ -1,14 +1,20 @@
 .label {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .body_b {
-    font-style: Poppins;
-    font-weight: 600;
+  font-style: Poppins;
+  font-weight: 600;
 }
 
-.body_r{
-    font-style: Poppins;
-    font-weight: 400;
+.heading {
+  font-style: Poppins;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.body_r {
+  font-style: Poppins;
+  font-weight: 400;
 }

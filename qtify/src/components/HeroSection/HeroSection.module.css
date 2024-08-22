@@ -1,0 +1,23 @@
+.root {
+  width: 100vw;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background-color: var(--color-black);
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .whiteText {
+      color: var(--color-white);
+    }
+  }
+
+  .image{
+    width: 212px;
+    height: 212px;
+  }
+}
