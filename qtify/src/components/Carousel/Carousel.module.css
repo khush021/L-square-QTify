@@ -1,14 +1,2 @@
-.arrow-left-top,
-.arrow-right-top,
-.arrow-left-new,
-.arrow-right-new {
-  height: 232px;
-  display: flex;
-  align-items: center;
-}
 
-.arrow-left-top,
-.arrow-left-new{
-  padding-right: 20px;
-}
 

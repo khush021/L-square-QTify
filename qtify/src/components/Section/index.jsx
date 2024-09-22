@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Typography } from "../Typography/Typography";
 import { AlbumCard } from "../AlbumCard";
 import { Carousel } from "../Carousel";
 import s from "./Section.module.css";
 
-export const Section = ({ title, data, showViewAllBtn = true }) => {
+export const Section = ({ title, data, showViewAllBtn = true, children }) => {
   const [opened, setOpened] = useState(false);
+
+  const type = useMemo(() => {
+    switch (title) {
+      case "Top Albums":
+        return "top";
+      case "New Albums":
+        return "new";
+      case "Songs":
+        return "songs";
+      default:
+        return "top";
+    }
+  }, [title]);
 
   return (
     <div className={s.root}>
@@ -21,17 +34,19 @@ export const Section = ({ title, data, showViewAllBtn = true }) => {
         )}
       </div>
 
+      {children}
+
       <div className={s.container}>
         {opened ? (
           <div className={s.body}>
             {data?.map((item) => (
-              <AlbumCard album={item} key={`${item.id}`}/>
+              <AlbumCard album={item} key={`${item?.id}`} type={type} />
             ))}
           </div>
         ) : (
-          <Carousel type={title === 'Top Albums' ? 'top' : 'new' } >
+          <Carousel id={type}>
             {data?.map((item) => (
-              <AlbumCard album={item} key={`${item.id}`}/>
+              <AlbumCard album={item} key={`${item?.id}`} type={type} />
             ))}
           </Carousel>
         )}

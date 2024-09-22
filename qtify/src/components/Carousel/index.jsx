@@ -9,7 +9,7 @@ import s from "./Carousel.module.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export const Carousel = ({ children, type }) => {
+export const Carousel = ({ children, id }) => {
   const calculateSlidesPerView = () => {
     const slideWidth = 160;
     const gap = 40;
@@ -24,10 +24,13 @@ export const Carousel = ({ children, type }) => {
   return (
     <>
       <div
-        className={cn(
-          `arrow-left-${type} arrow`,
-          s[`arrow-left-${type}`]
-        )}
+        className={cn(`arrow-left-${id} arrow`, s[`arrow-left-${id}`])}
+        style={{
+          height: "232px",
+          display: "flex",
+          alignItems: "center",
+          paddingRight: '30px'
+        }}
       >
         <LeftArrow />
       </div>
@@ -35,19 +38,25 @@ export const Carousel = ({ children, type }) => {
         slidesPerView={slidesToShow}
         navigation={{
           enabled: true,
-          nextEl: `.arrow-right-${type}`,
-          prevEl: `.arrow-left-${type}`,
+          nextEl: `.arrow-right-${id}`,
+          prevEl: `.arrow-left-${id}`,
         }}
-        // navigation={true}
         modules={[Navigation]}
         className={s.mySwiper}
       >
         {children?.map((item, id) => (
-          <SwiperSlide key={`${id}#${type}`}>{item}</SwiperSlide>
+          <SwiperSlide key={`${id}#${id}`}>{item}</SwiperSlide>
         ))}
       </Swiper>
 
-      <div className={cn(`arrow-right-${type}`, s[`arrow-right-${type}`])}>
+      <div
+        className={cn(`arrow-right-${id}`, s[`arrow-right-${id}`])}
+        style={{
+          height: "232px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <RightArrow />
       </div>
     </>
