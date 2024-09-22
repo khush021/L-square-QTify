@@ -1,0 +1,54 @@
+.root {
+  width: 159px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .album {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 10px;
+
+    img {
+      height: 170px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .albumBottom {
+      display: flex;
+      justify-content: flex-start;
+      background-color: var(--color-white);
+      padding: 8px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .chip {
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 10px;
+        background-color: var(--color-black);
+
+        .followCount {
+          font-family: Poppins;
+          font-size: 10px;
+          font-weight: 400;
+          line-height: 15px;
+          text-align: left;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .bottomText {
+    background-color: var(--color-black);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: var(--color-white);
+  }
+}
